@@ -1,0 +1,7 @@
+# Day 8 Reflection
+
+The most difficult concept in the course was designing for simultaneous requests without allowing the data to become incorrect. In TicketHub, two people may click the same seat at nearly the same time. I first thought checking whether a seat was available would be enough, but I learned that both requests could see the same old status. I addressed this by explaining how a database transaction, row-level locking, and unique constraints work together. The database is the source of truth; the seat map and cache only display availability.
+
+One improvement I would make to my capstone is to support the design with more testing evidence. I would demonstrate a successful request and an error response in the browser's Network tab, test the mobile layout, and show how the interface behaves when a request fails. For TicketHub, I would also build a small prototype and run concurrent requests against the same seat to verify that only one hold succeeds. The traffic figures are estimates, so I would measure the system under load rather than assume it can meet the target.
+
+Next, I want to learn Node.js and Express to turn my API design into working endpoints, then practise PostgreSQL transactions and constraints in a small booking application. After that, I will learn automated API testing and performance monitoring so I can measure response times, errors, and database bottlenecks. These steps will help me move from describing a reliable system to building and testing one.
